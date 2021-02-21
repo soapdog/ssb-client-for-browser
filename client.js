@@ -43,11 +43,7 @@ module.exports = function (opts, cb) {
   // that got connected up when you called. so they are not hard coded here.
 
   var ms = MultiServer([
-    [Net({}), shs],
-    [Onion({}), shs],
-    [WS({}), shs],
-    [UnixSock({}), noauth],
-    [Net({}), noauth]
+    [WS({}), shs]
   ])
 
   ms.client(remote, function (err, stream) {
